@@ -1,0 +1,10 @@
+{
+  "name": "genetrail-core",
+  "version": "0.0.1",
+  "description": "This is just a port of the Genetrail project to use vcpkg for faster development and easier deployment. The core builds the general structure all other projects parts are being built on.",
+  "dependencies": [
+    "fmt",
+    "eigen3",
+    "boost"
+  ]
+}
