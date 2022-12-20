@@ -5,4 +5,3 @@
 #if !defined(GENETRAILCORE_EXPORT)
 #define GENETRAILCORE_EXPORT
 #endif
-

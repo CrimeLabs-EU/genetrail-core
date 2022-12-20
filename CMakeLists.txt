@@ -15,7 +15,7 @@ find_package(Boost CONFIG REQUIRED)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(genetrailcore include/macros.h src/main.cpp include/Matrix.h include/Exception.h src/Exception.cpp include/AbstractMatrix.h src/AbstractMatrix.cpp include/BoostGraph.h include/BoostGraphParser.h)
+add_library(genetrailcore include/macros.h src/main.cpp include/Matrix.h include/Exception.h src/Exception.cpp include/AbstractMatrix.h src/AbstractMatrix.cpp include/BoostGraph.h include/BoostGraphParser.h include/BoostGraphProcessor.h src/BoostGraphProcessor.cpp include/Category.h include/EntityDatabase.h src/EntityDatabase.cpp include/Metadata.h src/Metadata.cpp src/Category.cpp include/CategoryDatabase.h include/Editor.h src/CategoryDatabase.cpp include/File.h src/File.cpp include/CombineReducedEnrichments.h src/CombineReducedEnrichments.cpp)
 add_library(genetrailcore::genetrailcore ALIAS genetrailcore)
 
 if(BUILD_SHARED_LIBS AND WIN32)

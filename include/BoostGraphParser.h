@@ -37,10 +37,7 @@ namespace genetrailcore {
          * @return Pointer to the searched vertex
          */
         template<typename Graph>
-        vertex_descriptor checkForVertexInGraph(
-                const std::string &identifier,
-                std::map<std::string, vertex_descriptor> &vertex_map,
-                Graph &graph) {
+        vertex_descriptor checkForVertexInGraph(const std::string &identifier, std::map<std::string, vertex_descriptor> &vertex_map, Graph &graph) {
             typename boost::property_map<Graph, vertex_identifier_t>::type vertex_ids = boost::get(vertex_identifier, graph);
             vertex_descriptor vertex_desc;
 
@@ -139,6 +136,7 @@ namespace genetrailcore {
                     output_sif << vertex_ids[boost::target(*vi2, graph)] << std::endl;
                 }
             }
+            output_sif.close();
         }
     };
 }// namespace genetrailcore

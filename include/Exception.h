@@ -62,8 +62,7 @@ namespace genetrailcore {
     private:
         std::string msg_;
     };
-}
+}// namespace genetrailcore
 
 
-#endif //GENETRAILCORE_EXCEPTION_H
-
+#endif//GENETRAILCORE_EXCEPTION_H
