@@ -14,7 +14,7 @@
 
 #include <boost/variant.hpp>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     class GENETRAILCORE_EXPORT Metadata {
     public:

@@ -10,7 +10,7 @@
 #include <memory>
 #include <string>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wattributes"
 

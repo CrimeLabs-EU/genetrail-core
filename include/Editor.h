@@ -9,7 +9,7 @@
 
 #include <string>
 
-namespace genetrailcore
+namespace GeneTrail::Core
 {
     struct GENETRAILCORE_EXPORT Editor {
         std::string name;

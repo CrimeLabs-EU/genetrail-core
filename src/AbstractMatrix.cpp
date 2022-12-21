@@ -8,7 +8,7 @@
 #include <limits>
 #include <utility>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     AbstractMatrix::AbstractMatrix(index_type rows, index_type cols) : index_to_rowname_(rows), index_to_colname_(cols) {}
 

@@ -16,7 +16,7 @@
 
 namespace bio = boost::iostreams;
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     GenericFile::GenericFile(const std::string &path, FileOpenMode mode) : in_strm_(nullptr), out_strm_(nullptr), mode_(mode), destruct_(false) {
         switch (mode) {

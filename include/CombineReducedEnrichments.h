@@ -13,7 +13,7 @@
 #include <set>
 #include <vector>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
     class GENETRAILCORE_EXPORT CombineReducedEnrichments {
     public:
         CombineReducedEnrichments() = default;

@@ -3,7 +3,7 @@
 //
 #include "BoostGraphProcessor.h"
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
     void BoostGraphProcessor::adaptGraph(GraphType &graph, const std::set<std::string> &gene_set) {
 
         std::set<std::string>::iterator gene_iter;

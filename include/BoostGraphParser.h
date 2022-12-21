@@ -20,7 +20,7 @@
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string/trim.hpp>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
     class GENETRAILCORE_EXPORT BoostGraphParser {
     public:
         BoostGraphParser() {}
@@ -139,6 +139,6 @@ namespace genetrailcore {
             output_sif.close();
         }
     };
-}// namespace genetrailcore
+}// namespace GeneTrail::Core
 
 #endif//GENETRAILCORE_BOOSTGRAPHPARSER_H

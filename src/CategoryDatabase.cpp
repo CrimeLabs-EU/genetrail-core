@@ -3,7 +3,7 @@
 //
 #include "CategoryDatabase.h"
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     CategoryDatabase::CategoryDatabase(const std::shared_ptr<EntityDatabase> &db) : entity_database_(db) {}
 

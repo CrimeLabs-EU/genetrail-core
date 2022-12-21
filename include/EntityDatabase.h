@@ -13,7 +13,7 @@
 
 #include "macros.h"
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     class GENETRAILCORE_EXPORT EntityDatabase {
     public:

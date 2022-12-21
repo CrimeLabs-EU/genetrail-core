@@ -5,6 +5,12 @@
   "dependencies": [
     "fmt",
     "eigen3",
-    "boost"
+    "boost",
+    "boost-iostreams",
+    "boost-graph",
+    "boost-container",
+    "boost-algorithm",
+    "boost-math",
+    "boost-range"
   ]
 }

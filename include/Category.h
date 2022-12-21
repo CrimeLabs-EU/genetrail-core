@@ -18,7 +18,7 @@
 #include "EntityDatabase.h"
 #include "Metadata.h"
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     class GENETRAILCORE_EXPORT Category {
     private:

@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <exception>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
     Category::Category(EntityDatabase *database, const std::string &name) : name_(name), database_(database) {}
 
     Category::Category(EntityDatabase *database) : database_(database) {}
@@ -76,7 +76,8 @@ namespace genetrailcore {
         strm << &cat << std::endl << std::endl;
         strm << cat.name() << '\t' << cat.reference();
 
-        std::copy(cat.names().begin(), cat.names().end(), std::ostream_iterator<std::string>(strm, '\t'));
+        std::copy(cat.names().begin(), cat.names().end(), std::ostream_iterator<std::string>(strm, "\t"));
+        return strm;
     }
 
-}// namespace genetrailcore
+}// namespace GeneTrail::Core

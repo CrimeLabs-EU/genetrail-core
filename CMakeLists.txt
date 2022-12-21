@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
 
 set(genetrailcore_VERSION 0.0.1)
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 project(genetrailcore VERSION ${genetrailcore_VERSION}
         DESCRIPTION "The core library for genetrail2 used to build a high performance microservice applications."
@@ -11,23 +12,54 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 find_package(Eigen3 CONFIG REQUIRED)
-find_package(Boost CONFIG REQUIRED)
+find_package(Boost REQUIRED COMPONENTS iostreams)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(genetrailcore include/macros.h src/main.cpp include/Matrix.h include/Exception.h src/Exception.cpp include/AbstractMatrix.h src/AbstractMatrix.cpp include/BoostGraph.h include/BoostGraphParser.h include/BoostGraphProcessor.h src/BoostGraphProcessor.cpp include/Category.h include/EntityDatabase.h src/EntityDatabase.cpp include/Metadata.h src/Metadata.cpp src/Category.cpp include/CategoryDatabase.h include/Editor.h src/CategoryDatabase.cpp include/File.h src/File.cpp include/CombineReducedEnrichments.h src/CombineReducedEnrichments.cpp)
+add_library(genetrailcore SHARED)
+target_sources(genetrailcore PRIVATE
+        include/macros.h
+        include/Matrix.h
+        include/Exception.h
+        src/Exception.cpp
+        include/AbstractMatrix.h
+        src/AbstractMatrix.cpp
+        include/BoostGraph.h
+        include/BoostGraphParser.h
+        include/BoostGraphProcessor.h
+        src/BoostGraphProcessor.cpp
+        include/Category.h
+        include/EntityDatabase.h
+        src/EntityDatabase.cpp
+        include/Metadata.h
+        src/Metadata.cpp
+        src/Category.cpp
+        include/CategoryDatabase.h
+        include/Editor.h
+        src/CategoryDatabase.cpp
+        include/File.h
+        src/File.cpp
+        include/CombineReducedEnrichments.h
+        src/CombineReducedEnrichments.cpp
+        include/Statistic.h
+        include/ConfidenceInterval.h
+        include/DenseMatrix.h
+        src/DenseMatrix.cpp
+        include/DenseColumnSubset.h
+        src/DenseColumnSubset.cpp)
 add_library(genetrailcore::genetrailcore ALIAS genetrailcore)
 
-if(BUILD_SHARED_LIBS AND WIN32)
+
+if (BUILD_SHARED_LIBS AND WIN32)
     target_compile_definitions(genetrailcore
             PRIVATE "GENETRAILCORE_EXPORT=__declspec(dllexport)"
             INTERFACE "GENETRAILCORE_EXPORT=__declspec(dllimport)")
-endif()
+endif ()
 
 target_link_libraries(genetrailcore PRIVATE Eigen3::Eigen)
-target_link_libraries(genetrailcore PRIVATE Boost::boost)
+target_link_libraries(genetrailcore PRIVATE Boost::boost ${Boost_LIBRARIES})
 
-target_compile_features(genetrailcore PUBLIC cxx_std_20)
+target_compile_features(genetrailcore PRIVATE cxx_std_20)
 target_include_directories(genetrailcore
         PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -50,6 +82,6 @@ install(
 install(TARGETS genetrailcore EXPORT genetrailcore-targets)
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(EXPORT genetrailcore-targets
-        NAMESPACE genetrailcore::
+        NAMESPACE GeneTrail::Core::
         DESTINATION ${CMAKE_INSTALL_DATADIR}/genetrailcore)
 

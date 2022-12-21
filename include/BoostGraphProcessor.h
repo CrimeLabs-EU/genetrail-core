@@ -12,7 +12,7 @@
 #include <set>
 #include <vector>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     class GENETRAILCORE_EXPORT BoostGraphProcessor {
     public:

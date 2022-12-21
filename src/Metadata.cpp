@@ -6,7 +6,7 @@
 
 #include <memory>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     Metadata::Metadata(const Metadata &metadata) {
         if (metadata.data_ != nullptr) { data_ = std::make_unique<Map>(*metadata.data_); }

@@ -17,7 +17,7 @@
 #include "Exception.h"
 #include <iostream>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     void CombineReducedEnrichments::writeFiles(const std::string &sampleOutDirs, const std::string &matrixOutFiles) {
         parseMatrixOutFiles(matrixOutFiles);

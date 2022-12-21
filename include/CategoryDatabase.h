@@ -16,7 +16,7 @@
 #include <string>
 #include <vector>
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     class GENETRAILCORE_EXPORT CategoryDatabase {
 

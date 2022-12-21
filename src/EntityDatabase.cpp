@@ -4,7 +4,7 @@
 #include "EntityDatabase.h"
 #include "Exception.h"
 
-namespace genetrailcore {
+namespace GeneTrail::Core {
 
     void EntityDatabase::clear() {
         name_to_index_.clear();
